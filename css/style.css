@@ -2,6 +2,7 @@
 
 :root {
 	--navbar-color: black;
+	--border-color: rgb(184, 184, 184);
 }
 
 * {
@@ -32,7 +33,7 @@ body {
 	max-width: 1500px;
 	margin-left: auto;
 	margin-right: auto;
-	grid-template-columns: 75% 25%;
+	grid-template-columns: 80% 20%;
 	grid-template-rows: 1.5fr 0.2fr;
 	grid-template-areas:
 	"main sidebar"
@@ -113,11 +114,20 @@ footer {
 	text-align: center;
 	border: #202121 1px solid;
 	color: white;
+	border-radius: 8px;
 }
 
 .postwall {
 	max-width: 100%;
-	height: 726px;
+	overflow: hidden;
+	display: block;
+	height: 717px;
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+}
+
+.postwall-menu {
+	overflow: hidden;
 }
 
 .postwall-menu li {
@@ -125,6 +135,14 @@ footer {
 	float: left;
 	list-style-type: none;
 	padding: 10px;
+}
+
+.post {
+	border: 1px solid var(--border-color);
+	max-width: 100%;
+	overflow: hidden;
+	height: 65px;
+	background-color: red;
 }
 
 @media only screen and (max-width: 550px) {
