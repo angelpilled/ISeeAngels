@@ -40,6 +40,7 @@ body {
 	"main sidebar"
 	"footer footer";
 	padding: 50px;
+	padding-top: 0px;
 	gap: 10px;
 }
 
@@ -109,6 +110,7 @@ footer {
 	min-width: 270px;
 	overflow: hidden;
 	display: block;
+	position: relative;
 }
 
 .sidebar-image img{
