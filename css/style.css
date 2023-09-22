@@ -2,7 +2,17 @@
 
 :root {
 	--navbar-color: black;
-	--border-color: #4a4a4a;
+	--border-color: #212121;
+	--forum-box-overlay: rgba(0, 0, 0, 0.7);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  cursor: pointer;
 }
 
 * {
@@ -25,6 +35,30 @@ body {
 	height: 180px;
 	object-fit: cover;
 	display: block;
+	background-image: url(/imgs/iseeangels.png);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+#symbol {
+	max-width: 1550px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#symbol img {
+	margin-top: 5px;
+	width: 165px;
+	aspect-ratio: 1;
+}
+
+#page-title {
+	position: absolute;
+	top: 50%;
+	left: 70%;
+	transform: translate(-50%, -70%);
+	font-size: 80px;
 }
 
 .container {
@@ -82,6 +116,11 @@ nav {
 
 a {
 	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 main {
@@ -102,6 +141,10 @@ footer {
 
 /* Sidebar attributes start here! */
 
+.inline {
+	display: inline;
+}
+
 .sidebar {
 	/* background-color: green; */
 	grid-area: sidebar;
@@ -110,7 +153,6 @@ footer {
 	min-width: 270px;
 	overflow: hidden;
 	display: block;
-	position: relative;
 }
 
 .sidebar-image img{
@@ -140,6 +182,93 @@ footer {
 	padding: 10px;
 }
 
+/* This is the beginning of the forums classes with media query!!! */
+
+.forums {
+	display: grid;
+	grid-template-rows: 240px 240px;
+	grid-auto-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+	"forums-site-information forums-angels forums-gen"
+	"forums-wiki forums-compsci forums-3d"
+	;
+	gap: 10px;
+}
+
+.forums-site-information {
+	background-image: url(/imgs/forums-backgrounds/sunset.jpg);
+	background-size: cover;
+}
+
+.forums-angels {
+	background-image: url(/imgs/forums-backgrounds/angels.png);
+	background-size: cover;
+}
+
+.forums-element {
+	background-color: blue;
+	width: 100%;
+	padding: 10px;
+	line-height: 25px;
+	font-size: 13px;
+	border: 1px var(--border-color) solid;
+	position: relative;
+}
+
+.forum-box {
+	background-color: var(--forum-box-overlay);
+	box-shadow: 0 0 0 10px var(--forum-box-overlay);
+}
+
+.forum-table-content {
+	padding-left: 10px;
+	font-weight: 900;
+}
+
+.forum-box-icon {
+	float: left;
+	height: 100%;
+	position: relative;
+	margin-right: 10px;
+}
+
+.forum-box-title {
+	font-size: 17px;
+}
+
+.forum-box-description {
+	font-size: 15px;
+}
+
+.forum-highlighted {
+	margin-top: 15px;
+}
+
+.more {
+	width: 100%;
+	height: 40px;
+	background-color: var(--forum-box-overlay);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.more-post, .more-text {
+	display: inline-block;
+	margin-bottom: auto;
+	margin-top: 7px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.more-post {
+	float: left;
+}
+
+.more-text {
+	float: right;
+}
+
 /* Beginning of the main container contents */
 
 .welcome {
@@ -154,9 +283,10 @@ footer {
 }
 
 .postwall {
-	height: 717px;
 	border: 1px solid var(--border-color);
-	border-radius: 8px;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 10px;
 }
 
 .postwall-menu {
