@@ -160,6 +160,7 @@ footer br {
 
 .footer-logo {
 	grid-area: footer-logo;
+	position: relative;
 }
 
 .footer-rating {
@@ -174,6 +175,15 @@ footer br {
 	padding: 10px;
 	text-align: center;
 	font-size: 14px;
+}
+
+.footer-logo img {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width: 316px;
+	aspect-ratio: 1;
 }
 
 #copyright {
