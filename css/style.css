@@ -49,7 +49,8 @@ body {
 	display: block;
 	background-image: url(/imgs/night.png);
 	background-size: cover;
-	background-position: center;
+	background-position: 50% 180%;
+	background-attachment: fixed;
 	position: relative;
 }
 
@@ -57,6 +58,7 @@ body {
 	max-width: 1550px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: 30px;
 }
 
 .symbol img {
@@ -169,7 +171,6 @@ footer br {
 }
 
 .footer-griditem {
-	height: 500px;
 	padding: 10px;
 	text-align: center;
 	font-size: 14px;
@@ -291,49 +292,71 @@ footer br {
 /* This is the beginning of the forums classes with media query!!! */
 
 .forums {
+
 	display: grid;
 	grid-template-rows: 240px 240px 240px;
-	grid-auto-columns: 1fr 1fr 1fr;
+	grid-auto-columns: 1fr;
 	grid-template-areas: 
-	"forums-site-information forums-angels forums-gen"
-	"forums-wiki forums-compsci forums-3d"
+	"forums-site-information forums-angels forums-videogames"
+	"forums-music forums-compsci forums-three"
+	"forums-sewers none none"
 	;
 	gap: 10px;
+
+	/* display: grid; */
+	/* grid-template-rows: 240px 240px 240px 240px; */
+	/* grid-auto-columns: 1fr; */
+	/* grid-template-areas:  */
+	/* "forums-site-information forums-angels" */
+	/* "forums-videogames forums-music" */
+	/* "forums-compsci forums-three" */
+	/* "forums-sewers none" */
+	/* ; */
+	/* gap: 10px; */
+
+
 }
 
 .forums-site-information {
 	background-image: url(/imgs/forums-backgrounds/sunset.jpg);
 	background-size: cover;
+	grid-area: forums-site-information;
 }
 
 .forums-angels {
 	background-image: url(/imgs/forums-backgrounds/angels.png);
 	background-size: cover;
+	grid-area: forums-angels;
 }
 
 .forums-videogames {
 	background-image: url(/imgs/forums-backgrounds/vidya.png);
 	background-size: cover;
+	grid-area: forums-videogames;
 }
 
 .forums-compsci {
 	background-image: url(/imgs/forums-backgrounds/compsci.png);
 	background-size: cover;
+	grid-area: forums-compsci;
 }
 
-.forums-3 {
+.forums-three {
 	background-image: url(/imgs/forums-backgrounds/3.jpg);
 	background-size: cover;
+	grid-area: forums-three;
 }
 
 .forums-music {
 	background-image: url(/imgs/forums-backgrounds/music.png);
 	background-size: cover;
+	grid-area: forums-music;
 }
 
 .forums-sewers {
 	background-image: url(/imgs/forums-backgrounds/sewers.png);
 	background-size: cover;
+	grid-area: forums-sewers;
 }
 
 .forums-element {
@@ -406,8 +429,13 @@ footer br {
 
 /* Beginning of the main container contents */
 
+main {
+	width: 100%;
+}
+
 .welcome {
-	max-width: 100%;
+	min-width: 100%;
+	margin: 0;
 	font-weight: bold;
 	font-size: 40px;
 	padding: 10px;
@@ -513,6 +541,48 @@ footer br {
 	min-width: 40px;
 }
 
-@media only screen and (max-width: 550px) {
-	
+@media only screen and (max-width: 1400px) {
+	.forums {
+		display: grid;
+		grid-template-rows: 240px 240px 240px 240px;
+		grid-auto-columns: 1fr;
+		grid-template-areas: 
+		"forums-site-information forums-angels"
+		"forums-videogames forums-music"
+		"forums-compsci forums-three"
+		"forums-sewers none"
+		;
+		gap: 10px;
+	}
+
+}
+
+@media only screen and (max-width: 1030px) {
+	.sidebar {
+		display: none;
+	}
+
+	#page-title {
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 730px) {
+	.forums {
+		display: grid;
+		grid-template-rows: 240px 240px 240px 240px 240px 240px 240px;
+		grid-column:  1fr;
+		grid-template-areas: 
+		"forums-site-information"
+		"forums-angels"
+		"forums-videogames"
+		"forums-music"
+		"forums-compsci"
+		"forums-three"
+		"forums-sewers"
+		;
+		gap: 10px;
+	}
+
 }
