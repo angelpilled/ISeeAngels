@@ -4,6 +4,10 @@
 	--navbar-color: black;
 	--border-color: #212121;
 	--forum-box-overlay: rgba(0, 0, 0, 0.7);
+	--sidebar-border-color: #42bed6;
+	--latest-member: #1d6ec4;
+	--latest-member-hovered: #1771d1;
+	--section-title-color: #bb17d1;
 }
 
 .material-symbols-outlined {
@@ -28,6 +32,7 @@ body {
 	background-image: url(/imgs/background.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-attachment: fixed;
 	color: white;
 
 }
@@ -48,13 +53,13 @@ body {
 	position: relative;
 }
 
-#symbol {
+.symbol {
 	max-width: 1550px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#symbol img {
+.symbol img {
 	margin-top: 5px;
 	width: 165px;
 	aspect-ratio: 1;
@@ -71,7 +76,6 @@ body {
 .container {
 	margin-top: 25px;
 	display: flex;
-	height: 100vh;
 	max-width: 1750px;
 	margin-left: auto;
 	margin-right: auto;
@@ -125,15 +129,71 @@ a:hover {
 	text-decoration: underline;
 }
 
+/* GRID STYLING BEGINS HERE!!! */
+
+.bottom {
+	max-width: 1750px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
 footer {
-	grid-area: footer;
-	background-color: yellow;
-	padding: 20px;
+	background-color: var(--forum-box-overlay);
+	padding: 10px;
+}
+
+footer br {
+	margin-bottom: 10px;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-areas: 
+	"footer-logo footer-rating footer-banners"
+	;
+	gap: 10px;
+	grid-auto-columns: 1fr 1fr 1fr;
+}
+
+.footer-logo {
+	grid-area: footer-logo;
+}
+
+.footer-rating {
+	grid-area: footer-rating;
+}
+
+.footer-banners {
+	grid-area: footer-banners;
+}
+
+.footer-griditem {
+	height: 500px;
+	padding: 10px;
+	text-align: center;
+	font-size: 14px;
+}
+
+#copyright {
+	font-weight: bold;
+}
+
+#censor {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
 }
 
 .separator {
 	margin-bottom: 10px;
 	margin-top: 10px;
+}
+
+.sidebar-separator {
+	margin-bottom: 25px;
+	margin-top: 25px;
 }
 
 /* Sidebar attributes start here! */
@@ -159,15 +219,15 @@ footer {
 	min-width: 300px;
 }
 
-.sidebar-members {
+.sidebar-container {
 	width: 100%;
 	max-width: 100%;
 	background-color: var(--forum-box-overlay);
 }
 
-.members-online-text {
+.sidebar-text {
 	background-color: var(--forum-box-overlay);
-	border-bottom: 2px solid purple;
+	border-bottom: 2px solid var(--sidebar-border-color);
 }
 
 .members-online-currently {
@@ -187,11 +247,52 @@ footer {
 	padding-bottom: 10px;
 }
 
+.newest-members {
+	height: 240px;
+	text-align: center;
+	font-size: 0;
+	margin-top: 5px;
+}
+
+.newest-members img {
+	display: inline-block;
+	margin: 5px 5px 5px 5px;
+	width: 48px;
+}
+
+.latest-member {
+	color: var(--latest-member);
+}
+
+.latest-member a {
+	color: var(--latest-member);
+}
+
+.latest-member a:hover {
+	color: var(--latest-member-hovered);
+}
+
+.top-chatters li {
+	list-style-type: none;
+}
+
+.top-chatters img {
+	width: 24px;
+	aspect-ratio: 1;
+	vertical-align: top;
+	margin-right: 5px;
+	margin-bottom: 2px;
+}
+
+.forum-statistics {
+	font-size: 14px;
+}
+
 /* This is the beginning of the forums classes with media query!!! */
 
 .forums {
 	display: grid;
-	grid-template-rows: 240px 240px;
+	grid-template-rows: 240px 240px 240px;
 	grid-auto-columns: 1fr 1fr 1fr;
 	grid-template-areas: 
 	"forums-site-information forums-angels forums-gen"
@@ -227,6 +328,11 @@ footer {
 
 .forums-music {
 	background-image: url(/imgs/forums-backgrounds/music.png);
+	background-size: cover;
+}
+
+.forums-sewers {
+	background-image: url(/imgs/forums-backgrounds/sewers.png);
 	background-size: cover;
 }
 
@@ -309,13 +415,24 @@ footer {
 	border: #202121 1px solid;
 	color: white;
 	border-radius: 8px;
+	letter-spacing: 10px;
+}
+
+.section-title {
+	padding: 10px;
+	border-bottom: 2px solid var(--sidebar-border-color);
+}
+
+.section-content {
+	padding: 10px;
+	color: white;
 }
 
 .postwall {
 	border: 1px solid var(--border-color);
 	border-radius: 5px;
-	padding: 10px;
 	margin-bottom: 10px;
+	color: #1561a4;
 }
 
 .postwall-menu {
