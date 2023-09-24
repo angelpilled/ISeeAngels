@@ -37,6 +37,11 @@ body {
 
 }
 
+.no-scroll {
+	height: 100%;
+	overflow: hidden;
+}
+
 .padding-10 {
 	padding: 6px;
 	padding-left: 10px;
@@ -100,6 +105,13 @@ nav {
 	background-color: var(--navbar-color);
 	overflow: hidden;
 	width: 100%;
+
+
+}
+
+.burger {
+	cursor: pointer;
+	display: none !important;
 }
 
 .wide {
@@ -109,17 +121,21 @@ nav {
 }
 
 .nav-left li {
-	display: block;
+	list-style-type: none;
 	background-color: transparent;
 	float: left;
 	padding: 10px;
 }
 
 .nav-right li{
-	display: block;
+	list-style-type: none;
 	background-color: transparent;
 	float: right;
 	padding: 10px;
+}
+
+.nav-menu-btn {
+	display: none;
 }
 
 a {
@@ -444,12 +460,11 @@ main {
 }
 
 .welcome {
-	min-width: 100%;
+	text-align: center;
 	margin: 0;
 	font-weight: bold;
 	font-size: 40px;
 	padding: 10px;
-	text-align: center;
 	border: #202121 1px solid;
 	color: white;
 	border-radius: 8px;
@@ -576,9 +591,23 @@ main {
 		display: none;
 	}
 
+	.footer-grid {
+		grid-template-areas: 
+		"footer-rating footer-banners"
+		;
+		gap: 10px;
+		grid-column: 1fr 1fr;
+	}
+	.footer-logo {
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 730px) {
+	#banner {
+		display: none;
+	}
+
 	.forums {
 		display: grid;
 		grid-template-rows: 240px 240px 240px 240px 240px 240px 240px;
@@ -593,6 +622,64 @@ main {
 		"forums-sewers"
 		;
 		gap: 10px;
+	}
+
+	.footer-grid {
+		grid-template-areas: 
+		"footer-rating"
+		;
+		gap: 10px;
+		grid-column: 1fr 1fr;
+	}
+
+	.footer-banners {
+		display: none;
+	}
+
+	header {
+		position: sticky;
+		top: 0px;
+		z-index: 1000;
+		overflow: visible;
+	}
+
+	.nav-left {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		background-color: black;
+		z-index: 1;
+		transition: transform 0.5s ease-in;
+		width: 200px;
+		height: 200vh;
+	}
+
+	.nav-left li {
+		float: none;
+		padding: 20px ;
+		overflow: hidden;
+	}
+
+	.nav-menu-btn {
+		display: flex;
+	}
+	
+	.nav-menu-btn span {
+		float: right;
+	}
+
+	.menu-btn {
+		width: 100%;
+	}
+
+	.burger {
+		display: block !important;
+		padding: 10px;
+		width: 44px;
+	}
+
+	.nav-active{
+		transform: translateX(-100%);
 	}
 
 }
