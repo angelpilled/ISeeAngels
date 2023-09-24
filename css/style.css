@@ -37,6 +37,10 @@ body {
 
 }
 
+html, body {
+	height: 100%;
+}
+
 .no-scroll {
 	height: 100%;
 	overflow: hidden;
