@@ -34,8 +34,6 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 	color: white;
-	height: 100vh;
-
 }
 
 .no-scroll {
@@ -610,7 +608,6 @@ main {
 	}
 
 	.forums {
-		display: grid;
 		grid-template-rows: 240px 240px 240px 240px 240px 240px 240px;
 		grid-column:  1fr;
 		grid-template-areas: 
@@ -622,7 +619,6 @@ main {
 		"forums-three"
 		"forums-sewers"
 		;
-		gap: 10px;
 	}
 
 	.footer-grid {
@@ -652,7 +648,7 @@ main {
 		z-index: 1;
 		transition: transform 0.5s ease-in;
 		width: 200px;
-		height: 200vh;
+		height: 100vh;
 	}
 
 	.nav-left li {
