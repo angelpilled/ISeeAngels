@@ -34,11 +34,8 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 	color: white;
+	height: 100vh;
 
-}
-
-html, body {
-	height: 100%;
 }
 
 .no-scroll {
